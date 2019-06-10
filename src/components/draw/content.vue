@@ -3,7 +3,7 @@
     <div class="content">
       <ul class="content_ul">
         <li  v-for="(item, index) in list" :key="index" @click="show(item)">
-          <img v-lazy="item.item.pictures[0].img_src">
+          <img v-lazy="item.item.pictures[0].img_src + '@400w_384h_1e.webp' + ')'">
           <div class="text">
             <p class="one-txt-cut">{{item.item.title}}</p>
             <div data-v-333ea9dc="" class="user">

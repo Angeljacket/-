@@ -3,7 +3,7 @@
       <div class="content">
         <ul class="content_ul">
           <li  v-for="(item, index) in list" :key="index" @click="show(item)">
-            <img v-lazy="item.item.pictures[0].img_src">
+            <img v-lazy="item.item.pictures[0].img_src + '@400w_384h_1e.webp' + ')'">
             <div class="text">
             <p class="one-txt-cut">{{item.item.title}}</p>
               <div data-v-333ea9dc="" class="user">
@@ -35,8 +35,8 @@ export default {
   },
   created() {
     axios.post(`/apis/link_draw/v2/Doc/list?category=all&type=hot&page_num=0&page_size=20`).then(({data}) => {
-      // console.log(data)
       this.list = data.data.items
+      console.log(this.list)
       // console.log(this.list[0].item.doc_id)
       // console.log(this.list[1].item.pictures[0].img_src)
     })
